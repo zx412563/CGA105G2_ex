@@ -1,4 +1,4 @@
-package com.waiting.contorller;
+package com.standby.contorller;
 
 public class StandbyServlet {
 

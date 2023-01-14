@@ -1,4 +1,4 @@
-package com.waiting.model;
+package com.standby.model;
 
 import javax.persistence.*;
 

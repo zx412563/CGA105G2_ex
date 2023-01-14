@@ -1,4 +1,4 @@
-package com.waiting.model;
+package com.standby.model;
 
 import static com.core.common.Common.*;
 
