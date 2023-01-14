@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -13,10 +16,10 @@
   <!-- jquery 3.4.1  css -->
   <link rel="stylesheet" href="/resources/demos/style.css">
 
-  <link rel="stylesheet" href="/CGA105G2/src/main/webapp/assets/css/vendor.css" />
-  <link rel="stylesheet" href="/CGA105G2/src/main/webapp/assets/css/style.css" />
-  <link rel="stylesheet" href="/CGA105G2/src/main/webapp/assets/custom.css">
-  <link rel="stylesheet" href="/CGA105G2/src/main/webapp/assets/fonts/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="/CGA105G2/assets/css/vendor.css" />
+  <link rel="stylesheet" href="/CGA105G2/assets/css/style.css" />
+  <link rel="stylesheet" href="/CGA105G2/assets/custom.css">
+  <link rel="stylesheet" href="/CGA105G2/assets/fonts/font-awesome/css/font-awesome.css" />
   <!-- <link rel="stylesheet" href="/CGA105G2/src/main/webapp/assets/css/carousel.css" /> -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,7 +51,7 @@
 
 
             <a class="navbar-brand font-weight-bold" href="/CGA105G2/src/main/webapp/front-end/store/store/storeIndex.html">
-              <img src="/CGA105G2/src/main/webapp/assets/images/Logo.PNG" style="width: 100px; height: 100px" alt="" />FoodMap</a>
+              <img src="/CGA105G2/assets/images/Logo.PNG" style="width: 100px; height: 100px" alt="" />FoodMap</a>
             <!--            ps-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -571,9 +574,9 @@
   <!-- footer end -->
 
 
-  <script src="/CGA105G2/src/main/webapp/assets/js/vendor.js"></script>
-  <script src="/CGA105G2/src/main/webapp/assets/js/polyfills.js"></script>
-  <script src="/CGA105G2/src/main/webapp/assets/js/app.js"></script>
+  <script src="/CGA105G2/assets/js/vendor.js"></script>
+  <script src="/CGA105G2/assets/js/polyfills.js"></script>
+  <script src="/CGA105G2/assets/js/app.js"></script>
 
   <!-- Bootstrap 4.6.2 & Vue 3 & jquery 3.4.1-->
   <!-- jquery 3.4.1 -->
