@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<xml>
+
+
+    <Context>
+<!--context.xml 是對servlet提供資源-->
+<!--可透過JNDI管理Java Servlet使用的連線池-->
+<!--        連線池的選擇有很多, 主要有如下幾種:-->
+<!--        Tomcat JDBC Connection Pool：是 Tomcat 容器自帶的連線池，支援通用的 JDBC 應用程式介面，可以輕鬆與多種資料庫系統整合。-->
+<!--        Apache DBCP：是 Apache Foundation 所開發的開源連線池，支援許多 J2EE 容器和通用的 JDBC 應用程式介面，並提供了豐富的配置選項。-->
+<!--        HikariCP：是一個輕量級的高效能連線池, 是現在最為流行的連線池之一，支援許多 J2EE 容器和通用的 JDBC 應用程式介面, 同時提供了豐富的配置選項。-->
+<!--        c3p0:是一個強大的，通用的，輕量級的連線池，支援許多 J2EE 容器和通用的 JDBC 應用程式介面-->
+<!--        BoneCP:是一個輕量級的連線池, 支援許多 J2EE 容器和通用的 JDBC 應用程式介面, 特別是支援一些非常高效的特性, 如高效的縮減和快速的資料庫操作。-->
+
+<!--此連線池為Tomcat JDBC Connection Pool-->
+<!--透過hibernate.cfg.xml呼叫hibernate.connection.datasource啟動-->
+<!--        <Resource name="jdbc/cga105g2" type="javax.sql.DataSource"-->
+<!--                  driverClassName="com.mysql.jdbc.Driver"  auth="Container"-->
+<!--                  maxActive="100"-->
+<!--                  maxIdle="30"-->
+<!--                  maxWait="10000"-->
+<!--        />-->
+
+    </Context>
+
+
+
+
+</xml>

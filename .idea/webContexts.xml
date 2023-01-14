@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/BlankPage/Backstage_blank.html" value="file://$PROJECT_DIR$/src/main/webapp/BlankPage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/BlankPage/StoreStart_blank.html" value="file://$PROJECT_DIR$/src/main/webapp/BlankPage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/FoodMap/src/home/BackStage/Backstage_CouponReviewing.html" value="file://$PROJECT_DIR$/src/main/webapp/FoodMap/src/home/BackStage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/FoodMap/src/home/前後台/BackStage/Backstage-emp.html" value="file://$PROJECT_DIR$/src/main/webapp/FoodMap/src/home/前後台/BackStage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/FoodMap/src/home/前後台/BackStage/Backstage-empAdd.html" value="file://$PROJECT_DIR$/src/main/webapp/FoodMap/src/home/前後台/BackStage" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/back-end/advertise/reviewAdvertise.html" value="file://$PROJECT_DIR$/src/main/webapp/back-end/advertise" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/back-end/emp/addEmp.html" value="file://$PROJECT_DIR$/src/main/webapp/back-end/emp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/back-end/frontSelect/frontSelect.html" value="file://$PROJECT_DIR$/src/main/webapp/back-end/frontSelect" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/art/listArt.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/art" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/food_order/member/orderFoodOrderPage.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/food_order/member" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/food_order/store/listAllFoodOrderHistory.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/food_order/store" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/food_order/store/setFoodOrderInfo.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/food_order/store" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/saveArt/selectSaveArtByArticle.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/saveArt" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/saveArt/selectSaveArtByStore.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/saveArt" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/store/selectAllCode.html" value="file://$PROJECT_DIR$/src/main/webapp/front-end/Member/store" />
+      </map>
+    </option>
+  </component>
+</project>

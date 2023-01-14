@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/SQL/store.csv" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/calltable/model/contorller/EmpServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/calltable/model/dao/EmpDAO_interface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/calltable/model/dao/impl/EmpDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/calltable/model/dao/impl/EmpJDBCDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/calltable/model/dao/impl/EmpJNDIDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/contorller/EmpServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/tablename/dao/impl/testDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/tablename/dao/testDAO_interface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/tablename/pojo/dao/impl/testDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/tablename/pojo/dao/impl/testJDBCDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/tablename/pojo/dao/impl/testJNDIDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/test/model/tablename/pojo/dao/testDAO_interface.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
