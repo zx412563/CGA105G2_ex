@@ -139,6 +139,25 @@ public class StandbyDAO implements StandbyDAO_interface {
 		return list;
 	}
 
+	@Override
+	public Integer standByCount() {
+		String sql = "SELECT COUNT(1) FROM STANDBY";
+		int count = 0;
+		ResultSet rs = null;
+		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+				PreparedStatement pstm = con.prepareStatement(sql)) {
+
+			rs = pstm.executeQuery();
+			while (rs.next()) {
+				
+				count = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+
 	public static void main(String[] args) {
 		StandbyDAO dao = new StandbyDAO();
 
@@ -147,16 +166,16 @@ public class StandbyDAO implements StandbyDAO_interface {
 //		java.util.Date utilDate = new java.util.Date();
 //
 //		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(utilDate.getTime());
-		standbyVo.setStoreId(1);
-		standbyVo.setStaName("傻逼1");
-		standbyVo.setStaPhone("099990005");
-		standbyVo.setStaNumber(1);
-//		waitingVo1.setSta_time(sqlTimestamp);
-//		waitingVo1.setSta_status(1);
-
-		dao.insert(standbyVo);
-		System.out.println("insert ok");
-//		
+//		standbyVo.setStoreId(1);
+//		standbyVo.setStaName("傻逼1");
+//		standbyVo.setStaPhone("099990005");
+//		standbyVo.setStaNumber(1);
+////		waitingVo1.setSta_time(sqlTimestamp);
+////		waitingVo1.setSta_status(1);
+//
+//		dao.insert(standbyVo);
+//		System.out.println("insert ok");
+////		
 
 //		// update
 //		Standby standbyVo2 = new Standby();
@@ -191,5 +210,8 @@ public class StandbyDAO implements StandbyDAO_interface {
 //			System.out.println("------------------------");
 //		}
 
+		
+//		count
+		System.out.println(dao.standByCount());
 	}
 }
