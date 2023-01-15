@@ -1,5 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.sql.Timestamp"%>
+<%@ page import="com.standby.model.*"%>
+
+
+<%
+Standby standbyVo = (Standby) request.getAttribute("standbyVo");
+%>
+
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -129,6 +137,20 @@ a {
 	<!-- main -->
 
 
+
+
+	<%-- 錯誤表列 --%>
+	<c:if test="${not empty errorMsgs}">
+		<font style="color: red">請修正以下錯誤:</font>
+		<ul>
+			<c:forEach var="message" items="${errorMsgs}">
+				<li style="color: red">${message}</li>
+			</c:forEach>
+		</ul>
+	</c:if>
+
+
+
 	<!-- main -->
 	<div class="container-fluid">
 		<div class="row">
@@ -219,7 +241,7 @@ a {
 							<h1 class="text-center mt-5">🔆候位登記</h1>
 
 
-							<form action="#" class="row mt-17">
+							<form action="<%=request.getContextPath()%>/standby.do" class="row mt-17" METHOD ="post">
 								<div class="col-12 my-5">
 									<div class="form-group text-center">
 										<label for="CODE_TEXT"
@@ -227,41 +249,59 @@ a {
 										<input id="CODE_TEXT" class="form-control col-md-3  mx-auto "
 											disabled value="1">
 									</div>
+
+									<div class="col-12 col-sm-12 my-5">
+										<div class="form-group">
+											<label for="CODE_NUM"
+												class="form-label fs-md-6  font-weight-bold ">店家</label> <input
+												type="text" class="form-control"
+												value=" ${standbyVo.staStore }" name="staStore" />
+										</div>
+									</div>
+
 									<div class="col-12 col-sm-12 my-5">
 										<div class="form-group">
 											<label for="CODE_NUM"
 												class="form-label fs-md-6  font-weight-bold ">姓名</label> <input
-												type="text" class="form-control" id="CODE_NUM" />
+												type="text" class="form-control" name="staName"
+												placeholder="輸入姓名..." value="${standbyVo.staName }" />
 										</div>
 									</div>
+
 									<div class="col-12 col-sm-12 my-5">
 										<div class="form-group">
 											<label for="CODE_OFF"
 												class="form-label fs-md-6 font-black font-weight-bold">人數</label>
-											<input type="text" class="form-control" id="CODE_OFF1" />
+											<input type="text" class="form-control" placeholder="輸入人數..."
+												value="${standbyVo.staNumber }" name="staNumber" />
 										</div>
 									</div>
+
 									<div class="col-12 col-sm-12 my-5">
 										<div class="form-group">
 											<label for="CODE_OFF"
 												class="form-label fs-md-6 font-black font-weight-bold">電話</label>
-											<input type="text" class="form-control" id="CODE_OFF" />
+											<input type="text" class="form-control" placeholder="輸入電話..."
+												value="${standbyVo.staPhone }" name="staPhone"/>
 										</div>
 									</div>
 
 									<div class="form-group mb-0">
-										<button class="btn btn-outline-info btn-lg fs-8 container"
-											style="border-radius: 20px;" onclick="addWaitAlert()">送出</button>
+<!-- 										<button class="btn btn-outline-info btn-lg fs-8 container" -->
+<!-- 											style="border-radius: 20px;" onclick="addWaitAlert()">送出</button> -->
+
+										<input type="hidden" name="action" value="insert"> 
+										
+										<input
+											type="submit" value="新增候位"
+											class="btn btn-outline-info btn-lg fs-8 container"
+											style="border-radius: 20px;" onclick="">
 									</div>
 								</div>
 							</form>
 
 
-
-
-
 						</div>
-
 
 
 					</section>

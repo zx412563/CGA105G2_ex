@@ -22,7 +22,7 @@ public class StandbyServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		super.doGet(req, res);
+		doPost(req, res);
 	}
 
 	@Override
@@ -30,9 +30,7 @@ public class StandbyServlet extends HttpServlet {
 
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
-//		if ("getOne_for_displat".equals(action)) {
-//		List<String> errorMsgs =new LinkedList<String>();
-//		}
+
 
 		if ("getOneUpdate".equals(action)) {
 			List<String> errorMsgs = new LinkedList<String>();
@@ -104,45 +102,45 @@ public class StandbyServlet extends HttpServlet {
 			successView.forward(req, res);
 		}
 
-//===============================Insert(addWaiting.jsp)============================================
+//===============================Insert(addStandBy.jsp)============================================
 		if ("insert".equals(action)) {
 			List<String> errorMsgs = new LinkedList<String>();
 
 			req.setAttribute("errorMsgs", errorMsgs);
 			/*********************** 1.接收請求參數 - 輸入格式的錯誤處理 *************************/
-			String sta_name = req.getParameter("sta_name");
+			String staName = req.getParameter("staName");
 			String sta_nameReg = "^[(\u4e00-\u9fa5)]{2,10}$";
-			if (sta_name == null || sta_name.trim().length() == 0) {
+			if (staName == null || staName.trim().length() == 0) {
 				errorMsgs.add("姓名請勿空白");
-			} else if (!sta_name.trim().matches(sta_nameReg)) {
+			} else if (!staName.trim().matches(sta_nameReg)) {
 				errorMsgs.add("填寫姓名只能使用中文，且長度在2-10之間");
 			}
 
-			Integer store_id = Integer.valueOf(req.getParameter("store_id").trim());
-			if (store_id == null) {
+			Integer storeId = Integer.valueOf(req.getParameter("storeId").trim());
+			if (storeId == null) {
 				errorMsgs.add("請填寫店家");
 			}
 
-			String sta_phone = req.getParameter("sta_phone");
+			String staPhone = req.getParameter("staPhone");
 			String phoneReg = "^09\\d{8}$";
-			if (sta_phone == null || sta_phone.trim().length() == 0) {
+			if (staPhone == null || staPhone.trim().length() == 0) {
 				errorMsgs.add("電話請勿空白");
-			} else if (!sta_phone.trim().matches(phoneReg)) {
+			} else if (!staPhone.trim().matches(phoneReg)) {
 				errorMsgs.add("電話格式輸入錯誤");
 			}
 
-			Integer sta_number = Integer.valueOf(req.getParameter("sta_number").trim());
-			if (sta_number == null) {
+			Integer staNumber = Integer.valueOf(req.getParameter("staNumber").trim());
+			if (staNumber == null) {
 				errorMsgs.add("候位人數請勿空白");
-			} else if (sta_number > 10) {
+			} else if (staNumber > 10) {
 				errorMsgs.add("候位人數太多了");
 			}
 
 			Standby standbyVo = new Standby();
-			standbyVo.setStaName(sta_name);
-			standbyVo.setStoreId(store_id);
-			standbyVo.setStaPhone(sta_phone);
-			standbyVo.setStaNumber(sta_number);
+			standbyVo.setStaName(staName);
+			standbyVo.setStoreId(storeId);
+			standbyVo.setStaPhone(staPhone);
+			standbyVo.setStaNumber(staNumber);
 
 			if (!errorMsgs.isEmpty()) {
 				req.setAttribute("standbyVo", standbyVo); // 含有輸入格式錯誤的waitingVO物件,也存入req
@@ -152,7 +150,7 @@ public class StandbyServlet extends HttpServlet {
 			}
 			// ============================開始新增================================================
 			StandbyService standBySvc = new StandbyService();
-			standbyVo = standBySvc.addStandBy(store_id, sta_phone, phoneReg, sta_number);
+			standbyVo = standBySvc.addStandBy(storeId, staName, staPhone, staNumber);
 			String url = "standby/listAllStandBy.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, res);
