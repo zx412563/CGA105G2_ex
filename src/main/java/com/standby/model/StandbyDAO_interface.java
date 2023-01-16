@@ -14,6 +14,6 @@ public interface StandbyDAO_interface {
 	public List<Standby> getAll();
 
 	public Integer standByCount();
-
+	
 //  public List<EmpVO> getAll(Map<String, String[]> map); 
 }

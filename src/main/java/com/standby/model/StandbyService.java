@@ -17,7 +17,6 @@ public class StandbyService {
 		standbyVo.setStaName(staName);
 		standbyVo.setStaPhone(staPhone);
 		standbyVo.setStaNumber(staNumber);
-
 //		waitingVo.setSta_time(sta_time);
 //		waitingVo.setSta_status(sta_status);
 //		Timestamp sta_time,Integer sta_status

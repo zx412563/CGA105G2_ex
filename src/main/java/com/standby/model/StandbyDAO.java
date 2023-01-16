@@ -1,6 +1,8 @@
 package com.standby.model;
 
-import static com.core.common.Common.*;
+import static com.core.common.Common.PASSWORD;
+import static com.core.common.Common.URL;
+import static com.core.common.Common.USER;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,8 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.standby.model.*;
 
 public class StandbyDAO implements StandbyDAO_interface {
 
@@ -142,7 +142,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 	@Override
 	public Integer standByCount() {
 		String sql = "SELECT COUNT(1) FROM STANDBY";
-		int count = 0;
+		int staCount = 0;
 		ResultSet rs = null;
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
 				PreparedStatement pstm = con.prepareStatement(sql)) {
@@ -150,12 +150,12 @@ public class StandbyDAO implements StandbyDAO_interface {
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				
-				count = rs.getInt(1);
+				staCount = rs.getInt(1);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return count;
+		return staCount;
 	}
 
 	public static void main(String[] args) {
@@ -166,15 +166,15 @@ public class StandbyDAO implements StandbyDAO_interface {
 //		java.util.Date utilDate = new java.util.Date();
 //
 //		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(utilDate.getTime());
-//		standbyVo.setStoreId(1);
-//		standbyVo.setStaName("傻逼1");
-//		standbyVo.setStaPhone("099990005");
-//		standbyVo.setStaNumber(1);
-////		waitingVo1.setSta_time(sqlTimestamp);
-////		waitingVo1.setSta_status(1);
-//
-//		dao.insert(standbyVo);
-//		System.out.println("insert ok");
+		standbyVo.setStoreId(1);
+		standbyVo.setStaName("887");
+		standbyVo.setStaPhone("099990005");
+		standbyVo.setStaNumber(1);
+//		waitingVo1.setSta_time(sqlTimestamp);
+//		waitingVo1.setSta_status(1);
+
+		dao.insert(standbyVo);
+		System.out.println("insert ok");
 ////		
 
 //		// update
@@ -199,16 +199,16 @@ public class StandbyDAO implements StandbyDAO_interface {
 //		System.out.println(standbyVo3.getStaStatus());
 
 		// getall
-//		List<Standby> list = dao.getAll();
-//		for (Standby waitingVo4 : list) {
-//			System.out.println(waitingVo4.getStaId());
-//			System.out.println(waitingVo4.getStoreId());
-//			System.out.println(waitingVo4.getStaName());
-//			System.out.println(waitingVo4.getStaPhone());
-//			System.out.println(waitingVo4.getStaNumber());
-//			System.out.println(waitingVo4.getStaStatus());
-//			System.out.println("------------------------");
-//		}
+		List<Standby> list = dao.getAll();
+		for (Standby waitingVo4 : list) {
+			System.out.println(waitingVo4.getStaId());
+			System.out.println(waitingVo4.getStoreId());
+			System.out.println(waitingVo4.getStaName());
+			System.out.println(waitingVo4.getStaPhone());
+			System.out.println(waitingVo4.getStaNumber());
+			System.out.println(waitingVo4.getStaStatus());
+			System.out.println("------------------------");
+		}
 
 		
 //		count

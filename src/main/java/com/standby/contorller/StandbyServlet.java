@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.standby.model.Standby;
-import com.standby.model.StandbyService;
+import com.standby.model.*;
 
-@WebServlet("/standby.do")
+@WebServlet("/standby")
 public class StandbyServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -31,22 +30,21 @@ public class StandbyServlet extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		String action = req.getParameter("action");
 
-
 		if ("getOneUpdate".equals(action)) {
 			List<String> errorMsgs = new LinkedList<String>();
 
 			req.setAttribute("errorMsgs", errorMsgs);
 
-			Integer sta_id = Integer.valueOf(req.getParameter("sta_id"));
+			Integer staId = Integer.valueOf(req.getParameter("staId"));
 
 			StandbyService standbySvc = new StandbyService();
 
-			Standby standbyVo = standbySvc.getOneStandBy(sta_id);
+			Standby standbyVo = standbySvc.getOneStandBy(staId);
 
 			// select ok
 
-			req.setAttribute("waitingVo", standbyVo);
-			String url = "/waiting/update_status_input.jsp";
+			req.setAttribute("standbyVo", standbyVo);
+			String url = "/standby/update_status_input.jsp";
 			RequestDispatcher suceeessDispatcher = req.getRequestDispatcher(url);
 			suceeessDispatcher.forward(req, res);
 
@@ -103,6 +101,7 @@ public class StandbyServlet extends HttpServlet {
 		}
 
 //===============================Insert(addStandBy.jsp)============================================
+
 		if ("insert".equals(action)) {
 			List<String> errorMsgs = new LinkedList<String>();
 
@@ -122,6 +121,7 @@ public class StandbyServlet extends HttpServlet {
 			}
 
 			String staPhone = req.getParameter("staPhone");
+
 			String phoneReg = "^09\\d{8}$";
 			if (staPhone == null || staPhone.trim().length() == 0) {
 				errorMsgs.add("電話請勿空白");
@@ -129,11 +129,15 @@ public class StandbyServlet extends HttpServlet {
 				errorMsgs.add("電話格式輸入錯誤");
 			}
 
-			Integer staNumber = Integer.valueOf(req.getParameter("staNumber").trim());
-			if (staNumber == null) {
-				errorMsgs.add("候位人數請勿空白");
-			} else if (staNumber > 10) {
-				errorMsgs.add("候位人數太多了");
+			Integer staNumber = null;
+			try {
+				staNumber = Integer.valueOf(req.getParameter("staNumber").trim());
+			} catch (NumberFormatException e) {
+				if (staNumber == null) {
+					errorMsgs.add("候位人數請勿空白");
+				} else if (staNumber > 10) {
+					errorMsgs.add("候位人數太多了");
+				}
 			}
 
 			Standby standbyVo = new Standby();
@@ -144,14 +148,14 @@ public class StandbyServlet extends HttpServlet {
 
 			if (!errorMsgs.isEmpty()) {
 				req.setAttribute("standbyVo", standbyVo); // 含有輸入格式錯誤的waitingVO物件,也存入req
-				RequestDispatcher failureView = req.getRequestDispatcher("/standby/addStandBy.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/front-end/Member/standby/addStandBy.jsp");
 				failureView.forward(req, res);
 				return;
 			}
 			// ============================開始新增================================================
 			StandbyService standBySvc = new StandbyService();
 			standbyVo = standBySvc.addStandBy(storeId, staName, staPhone, staNumber);
-			String url = "standby/listAllStandBy.jsp";
+			String url = "/front-end/Member/standby/addStandBy.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, res);
 
@@ -164,13 +168,13 @@ public class StandbyServlet extends HttpServlet {
 			req.setAttribute("errorMsgs", errorMsgs);
 
 			// ===接收請求參數====
-			Integer sta_id = Integer.valueOf(req.getParameter("sta_id"));
+			Integer staId = Integer.valueOf(req.getParameter("staId").trim());
 			// ===========開始刪除(叫號移除候位表)================d
 			StandbyService standBySvc = new StandbyService();
-			standBySvc.deleteStandBy(sta_id);
+			standBySvc.deleteStandBy(staId);
 			// ==========刪除(叫號完成)===================
 
-			String url = "/waiting/listAllWaiting.jsp";
+			String url = "/front-end/store/calltable/callTable.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, res);
 		}
