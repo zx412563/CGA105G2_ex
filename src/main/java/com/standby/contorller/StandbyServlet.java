@@ -44,7 +44,7 @@ public class StandbyServlet extends HttpServlet {
 			// select ok
 
 			req.setAttribute("standbyVo", standbyVo);
-			String url = "/standby/update_status_input.jsp";
+			String url = "/front-end/standby/update_status_input.jsp";
 			RequestDispatcher suceeessDispatcher = req.getRequestDispatcher(url);
 			suceeessDispatcher.forward(req, res);
 
@@ -56,7 +56,7 @@ public class StandbyServlet extends HttpServlet {
 			req.setAttribute("errorMsgs", errorMsgs);
 
 			// ---接收請求參數 & 輸入錯誤處理---
-			Integer staId = Integer.valueOf(req.getParameter("sta_id").trim());
+			Integer staId = Integer.valueOf(req.getParameter("staId").trim());
 
 //			Integer store_id = Integer.valueOf(req.getParameter("store_id").trim());
 //
@@ -72,7 +72,7 @@ public class StandbyServlet extends HttpServlet {
 //			} catch (Exception e) {
 //
 //			}
-			Integer staStatus = Integer.valueOf(req.getParameter("sta_status").trim());
+			Integer staStatus = Integer.valueOf(req.getParameter("staStatus").trim());
 
 			Standby standbyVo = new Standby();
 			standbyVo.setStaId(staId);
@@ -84,7 +84,7 @@ public class StandbyServlet extends HttpServlet {
 //			waitingVo.setSta_time(sta_time);
 			if (!errorMsgs.isEmpty()) {
 				req.setAttribute("standbyVo", standbyVo);
-				RequestDispatcher failureView = req.getRequestDispatcher("/standby/update_status_input.jsp");
+				RequestDispatcher failureView = req.getRequestDispatcher("/front-end/Member/standby/update_status_input.jsp");
 				failureView.forward(req, res);
 				return;
 			}
@@ -95,7 +95,7 @@ public class StandbyServlet extends HttpServlet {
 
 			// 3.修改完成,準備轉交
 			req.setAttribute("standbyVo", standbyVo);
-			String url = "/waiting/listAllWaiting.jsp";
+			String url = "/front-end/store/calltable/callTable.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, res);
 		}
@@ -155,7 +155,7 @@ public class StandbyServlet extends HttpServlet {
 			// ============================開始新增================================================
 			StandbyService standBySvc = new StandbyService();
 			standbyVo = standBySvc.addStandBy(storeId, staName, staPhone, staNumber);
-			String url = "/front-end/Member/standby/addStandBy.jsp";
+			String url = "/front-end/store/calltable/callTable.jsp";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
 			successView.forward(req, res);
 

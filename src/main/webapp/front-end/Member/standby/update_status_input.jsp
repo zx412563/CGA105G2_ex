@@ -1,5 +1,10 @@
+<%@page import="com.standby.model.Standby"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%
+Standby standbyVo = (Standby) request.getAttribute("standbyVo");
+%>
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -84,8 +89,8 @@ a {
 						</form>
 
 						<!--            ps-->
-						<button class="navbar-toggler" type="button"
-							data-toggle="collapse" data-target="#navbarSupportedContent"
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent"
 							aria-controls="navbarSupportedContent" aria-expanded="false"
 							aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
@@ -115,8 +120,7 @@ a {
 									href="/CGA105G2/src/main/webapp/front-end/member/code/listAllCode.html">
 										🗃️管理 </a></li>
 								<li class="nav-item"><a class="nav-link text-uppercase"
-									data-toggle="none" href="/CGA105G2/src/main/webapp/">
-										🚪Sing out </a></li>
+									data-toggle="none" href="/CGA105G2/src/main/webapp/"> 🚪Sing out </a></li>
 							</ul>
 						</div>
 					</nav>
@@ -206,8 +210,7 @@ a {
 					</ul>
 				</div>
 			</nav>
-			<main role="main "
-				class="col-md-9 ml-sm-auto col-lg-10 px-md-4 container ">
+			<main role="main " class="col-md-9 ml-sm-auto col-lg-10 px-md-4 container ">
 				<div class=" m-10 p-10  " style="">
 
 
@@ -216,42 +219,55 @@ a {
 						id="contacts"
 						style="border: 2px solid rgba(19, 6, 197, 0.089); border-radius: 30px;">
 						<div class="col-12 col-lg-8 mb-14 mb-lg-0 container">
-							<h1 class="text-center mt-5">🔆候位登記</h1>
 
 
-							<form action="#" class="row mt-17">
+
+							<form action="<%=request.getContextPath()%>/standby" class="row mt-17"
+								method="post">
 								<div class="col-12 my-5">
-									<div class="form-group text-center">
-										<label for="CODE_TEXT"
-											class="form-label fs-md-6 font-black font-weight-bold">目前候位組數</label>
-										<input id="CODE_TEXT" class="form-control col-md-3  mx-auto "
-											disabled value="">
+									<h1 class="text-center mt-5">🔆候位</h1>
+									<div class="col-12 col-sm-12 my-5">
+										<div class="form-group">
+											<label for="staName" class="form-label fs-md-6  font-weight-bold ">姓名</label>
+											<input type="text" class="form-control" name="staName" disabled
+												value="<%=standbyVo.getStaName()%>" />
+										</div>
 									</div>
 									<div class="col-12 col-sm-12 my-5">
 										<div class="form-group">
-											<label for="CODE_NUM"
-												class="form-label fs-md-6  font-weight-bold ">姓名</label> <input
-												type="text" class="form-control" id="CODE_NUM" />
+											<label for="staNumber"
+												class="form-label fs-md-6 font-black font-weight-bold">人數</label> <input
+												type="text" class="form-control" name="staNumber" disabled
+												value="<%=standbyVo.getStaNumber()%>" />
 										</div>
 									</div>
 									<div class="col-12 col-sm-12 my-5">
 										<div class="form-group">
 											<label for="CODE_OFF"
-												class="form-label fs-md-6 font-black font-weight-bold">人數</label>
-											<input type="text" class="form-control" id="CODE_OFF1" />
+												class="form-label fs-md-6 font-black font-weight-bold">電話</label> <input
+												type="text" class="form-control" name="staPhone" disabled
+												value="<%=standbyVo.getStaPhone()%>" />
 										</div>
 									</div>
+
 									<div class="col-12 col-sm-12 my-5">
 										<div class="form-group">
 											<label for="CODE_OFF"
-												class="form-label fs-md-6 font-black font-weight-bold">電話</label>
-											<input type="text" class="form-control" id="CODE_OFF" />
+												class="form-label fs-md-6 font-black font-weight-bold">狀態</label> <input
+												type="text" class="form-control" name="staStatus"
+												value="<%=standbyVo.getStaStatus()%>" />
 										</div>
 									</div>
 
 									<div class="form-group mb-0">
 										<button class="btn btn-outline-info btn-lg fs-8 container"
-											style="border-radius: 20px;" onclick="addWaitAlert()">送出</button>
+											style="border-radius: 20px;" onclick="">送出</button>
+										<input type="hidden" name="action" value="Update"> 
+										<input
+											type="hidden" name="staId" value="<%=standbyVo.getStaId()%>">
+										<input type="hidden" name="staStatus"
+											value="<%=standbyVo.getStaStatus()%>"> <input type="submit"
+											value="送出修改">
 									</div>
 								</div>
 							</form>
@@ -265,38 +281,7 @@ a {
 
 
 					</section>
-					<form class="m-17 col-10  mx-auto">
-						<table class="table table-striped mx-auto">
-							<thead class="text-center">
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">First</th>
-									<th scope="col">Last</th>
-									<th scope="col">Handle</th>
-								</tr>
-							</thead>
-							<tbody class="text-center">
-								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
+
 
 				</div>
 
@@ -314,8 +299,7 @@ a {
 		style="width: 100%; position: relative; bottom: 0; top: 30%">
 		<div class="container">
 			<!-- 三張小圖 -->
-			<div
-				class="d-flex align-items-stretch justify-content-md-center py-10">
+			<div class="d-flex align-items-stretch justify-content-md-center py-10">
 				<!-- 地址 -->
 				<div class="card border-0 bg-secondary mb-4 ml-lg-9 w-25">
 					<div class="card-body py-17 px-10 text-center">
@@ -360,26 +344,23 @@ a {
 				<a href="home.html" class="footer-brand">FoodMap</a>
 				<div class="brand-icons-list ml-10 ml-sm-20">
 					<!-- FB圖案 -->
-					<a href="#"
-						class="brand-icon brand-icon-circle brand-icon-facebook"> <i
+					<a href="#" class="brand-icon brand-icon-circle brand-icon-facebook"> <i
 						class="fa fa-facebook-f"></i>
 					</a>
 					<!-- twitter圖案 -->
-					<a href="#" class="brand-icon brand-icon-circle brand-icon-twitter">
-						<i class="fa fa-twitter "></i>
+					<a href="#" class="brand-icon brand-icon-circle brand-icon-twitter"> <i
+						class="fa fa-twitter "></i>
 					</a>
 					<!-- ig圖案-->
-					<a href="#"
-						class="brand-icon brand-icon-circle brand-icon-instagram"> <i
-						class="fa fa-pinterest-p"></i>
+					<a href="#" class="brand-icon brand-icon-circle brand-icon-instagram">
+						<i class="fa fa-pinterest-p"></i>
 					</a>
 				</div>
 			</div>
 			<!-- 頁底文字 -->
 			<small class="d-flex align-items-center justify-content-center"
-				style="margin: 0px -10px 0px -10px;"> TibaMe CGA105_2
-				MapFood <a href="#" data-toggle="smooth-scroll"
-				data-target="#page-start-anchor"> <i
+				style="margin: 0px -10px 0px -10px;"> TibaMe CGA105_2 MapFood <a
+				href="#" data-toggle="smooth-scroll" data-target="#page-start-anchor"> <i
 					class="material-icons text-black">arrow_upward</i>
 			</a>
 			</small>
