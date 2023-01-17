@@ -16,7 +16,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public void insert(Standby standbyVo) {
-		String INSERT_STMT = " INSERT INTO `standby`(`STORE_ID`, `STA_NAME`, `STA_PHONE`, `STA_NUMBER`) VALUES  (?, ?, ?, ?)";
+		String INSERT_STMT = " INSERT INTO cga105g2.`standby`(`STORE_ID`, `STA_NAME`, `STA_PHONE`, `STA_NUMBER`) VALUES  (?, ?, ?, ?)";
 
 //		java.util.Date utilDate = new java.util.Date();
 //
@@ -40,7 +40,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public void update(Standby standbyVo) {
-		String UPDATE = "update standby set sta_status =? where sta_id =?;";
+		String UPDATE = "update cga105g2.`standby` set sta_status =? where sta_id =?;";
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
 				PreparedStatement pstm = con.prepareStatement(UPDATE)) {
 
@@ -56,7 +56,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public void delete(Integer staId) {
-		String DELETE = "DELETE FROM standby where sta_id = ?";
+		String DELETE = "DELETE FROM cga105g2.`standby` where sta_id = ?";
 //						"DELETE FROM STANDBY LIMIT 1;"
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
 				PreparedStatement pstm = con.prepareStatement(DELETE);) {
@@ -72,7 +72,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public Standby findByPrimaryKey(Integer staId) {
-		String GET_ONE_STMT = "select  sta_id ,store_id,sta_name,sta_phone,sta_number,sta_number,sta_time,sta_status from standby where STA_ID = ?;";
+		String GET_ONE_STMT = "select  sta_id ,store_id,sta_name,sta_phone,sta_number,sta_number,sta_time,sta_status from cga105g2.`standby`where STA_ID = ?;";
 
 		Standby standbyVo = null;
 
@@ -109,7 +109,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 	@Override
 	public List<Standby> getAll() {
 		String GET_ALL_STMT = "SELECT `STA_ID`, `STORE_ID`, `STA_NAME`, `STA_PHONE`, `STA_NUMBER`, `STA_TIME`, `STA_STATUS`\r\n"
-				+ "FROM `standby` order by sta_id";
+				+ "FROM cga105g2.`standby` order by sta_id";
 		List<Standby> list = new ArrayList<Standby>();
 		Standby standbyVo = null;
 
@@ -141,7 +141,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public Integer standByCount() {
-		String sql = "SELECT COUNT(1) FROM `STANDBY`;";
+		String sql = "SELECT COUNT(1) FROM cga105g2.STANDBY;";
 		int staCount = 0;
 		ResultSet rs = null;
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);

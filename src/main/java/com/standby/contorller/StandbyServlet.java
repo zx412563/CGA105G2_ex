@@ -44,7 +44,7 @@ public class StandbyServlet extends HttpServlet {
 			// select ok
 
 			req.setAttribute("standbyVo", standbyVo);
-			String url = "/front-end/standby/update_status_input.jsp";
+			String url = "/front-end/Member/standby/update_status_input.jsp";
 			RequestDispatcher suceeessDispatcher = req.getRequestDispatcher(url);
 			suceeessDispatcher.forward(req, res);
 
