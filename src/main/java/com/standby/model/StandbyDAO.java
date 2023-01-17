@@ -16,7 +16,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public void insert(Standby standbyVo) {
-		String INSERT_STMT = " INSERT INTO cga105g2.`standby`(`STORE_ID`, `STA_NAME`, `STA_PHONE`, `STA_NUMBER`) VALUES  (?, ?, ?, ?)";
+		String INSERT_STMT = " INSERT INTO `standby`(`STORE_ID`, `STA_NAME`, `STA_PHONE`, `STA_NUMBER`) VALUES  (?, ?, ?, ?)";
 
 //		java.util.Date utilDate = new java.util.Date();
 //

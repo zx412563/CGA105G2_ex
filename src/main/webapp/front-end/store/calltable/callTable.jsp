@@ -163,6 +163,7 @@ a {
 						<p class="form-control pt-5"
 							style="background-color: rgba(253, 72, 72, 0.65); color: black;">訂位表</p>
 					</div>
+					
 					<div class="btn-group btn-group-toggle" style="display: block"
 						id="tablecheck">
 						<div class="table-responsive ">
@@ -842,6 +843,7 @@ a {
 									timer: 1500
 								})
 							}
+							
 						</script>
 
 </body>
