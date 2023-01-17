@@ -6,10 +6,10 @@
 
 
 <%
-StandbyService standbySvc = new StandbyService();
-List<Standby> list = standbySvc.getAll();
+	StandbyService standbySvc = new StandbyService();
+	List<Standby> list = standbySvc.getAll();
 
-pageContext.setAttribute("list", list);
+	pageContext.setAttribute("list", list);
 %>
 
 
