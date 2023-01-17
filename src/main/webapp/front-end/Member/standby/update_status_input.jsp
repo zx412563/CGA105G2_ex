@@ -218,7 +218,7 @@ a {
 				<div>
 
 
-					<div class="col-9 card shadow mx-auto my-5">
+					<div class="col-6 card shadow mx-auto my-5 p-5 bg-cyan-10">
 
 						<%-- 錯誤表列 --%>
 						<c:if test="${not empty errorMsgs}">
@@ -234,41 +234,53 @@ a {
 							class=" mt-17" method="post">
 
 							<h1 class="text-center mt-5">🔆候位</h1>
-							<div class="form-group">
+							<div class="form-group col-8 mx-auto">
 								<label for="staName"
 									class="form-label fs-md-6  font-weight-bold ">姓名</label> <input
 									type="text" class="form-control" name="staName" disabled
 									value="<%=standbyVo.getStaName()%>" />
 							</div>
 
-							<div class="form-group">
+							<div class="form-group col-8 mx-auto">
 								<label for="staNumber"
 									class="form-label fs-md-6 font-black font-weight-bold">人數</label>
 								<input type="text" class="form-control" name="staNumber"
 									disabled value="<%=standbyVo.getStaNumber()%>" />
 							</div>
 
-							
-								<div class="form-group">
-								  <label for="CODE_OFF" class="form-label fs-md-6 font-black font-weight-bold">電話</label>
-								  <input type="text" class="form-control" name="staPhone" disabled value="<%=standbyVo.getStaPhone()%>" />
-								</div>
-						
-							
-						
-								<div class="form-group">
-								  <label for="CODE_OFF" class="form-label fs-md-6 font-black font-weight-bold">狀態</label>
-								  <input type="text" class="form-control" name="staStatus" value="<%=standbyVo.getStaStatus()%>" />
-								</div>
-					
-							
-							  <div class="form-group mb-0">
-								<!-- <button class="btn btn-outline-info btn-lg fs-8 container" style="border-radius: 20px;" onclick="">送出
-								</button> -->
-								<input type="hidden" name="action" value="Update">
-								<input type="hidden" name="staId" value="<%=standbyVo.getStaId()%>">
-								<input type="hidden" name="staStatus" value="<%=standbyVo.getStaStatus()%>"> <input type="submit" value="送出修改">
-							  </div>
+
+							<div class="form-group col-8 mx-auto">
+								<label for="CODE_OFF"
+									class="form-label fs-md-6 font-black font-weight-bold">電話</label>
+								<input type="text" class="form-control" name="staPhone" disabled
+									value="<%=standbyVo.getStaPhone()%>" />
+							</div>
+
+
+
+							<div class="form-group col-8 mx-auto">
+								<label for="CODE_OFF"
+									class="form-label fs-md-6 font-black font-weight-bold">狀態</label>
+								<input type="text" class="form-control" name="staStatus"
+									value="<%=standbyVo.getStaStatus()%>" />
+							</div>
+							<div class="form-group col-8 mx-auto">
+								<label for="staStatus"
+									class="form-label fs-md-6 font-black font-weight-bold">狀態</label>
+								<select>
+								<option>
+								</select>
+							</div>
+
+
+							<div class="form-group mb-0 col-8 mx-auto  ">
+								<input class="btn btn-outline-info  fs-7 container"
+									style="border-radius: 20px;" type="submit" value="送出修改"
+									onclick=""> <input type="hidden" name="action"
+									value="Update"> <input type="hidden" name="staId"
+									value="<%=standbyVo.getStaId()%>"> <input type="hidden"
+									name="staStatus" value="<%=standbyVo.getStaStatus()%>">
+							</div>
 
 
 
@@ -276,10 +288,6 @@ a {
 					</div>
 
 				</div>
-
-
-
-
 
 
 
