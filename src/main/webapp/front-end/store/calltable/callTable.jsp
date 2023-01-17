@@ -23,7 +23,7 @@ pageContext.setAttribute("list", list);
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
 <title>店家首頁</title>
-<!-- Bootstrap css -->
+<!-- Bootstrap css123 -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
 	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
