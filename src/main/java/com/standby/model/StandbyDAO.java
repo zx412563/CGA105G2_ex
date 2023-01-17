@@ -141,7 +141,7 @@ public class StandbyDAO implements StandbyDAO_interface {
 
 	@Override
 	public Integer standByCount() {
-		String sql = "SELECT COUNT(1) FROM STANDBY";
+		String sql = "SELECT COUNT(1) FROM `STANDBY`;";
 		int staCount = 0;
 		ResultSet rs = null;
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
