@@ -42,7 +42,8 @@ pageContext.setAttribute("list", list);
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
+<link
+	href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
 	rel="stylesheet" type="text/css">
 
 
@@ -74,8 +75,8 @@ a {
 							style="width: 100px; height: 100px" alt="" />FoodMap
 						</a>
 						<!--            ps-->
-						<button class="navbar-toggler" type="button" data-toggle="collapse"
-							data-target="#navbarSupportedContent"
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#navbarSupportedContent"
 							aria-controls="navbarSupportedContent" aria-expanded="false"
 							aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
@@ -97,8 +98,8 @@ a {
 									href="/CGA105G2/src/main/webapp/front-end/store/waiting/setWaiting.html">
 										🚩候位 </a></li>
 								<li class="nav-item"><a
-									class="nav-link text-uppercase active disabled" data-toggle="none"
-									style="color: #216a51 !important;"
+									class="nav-link text-uppercase active disabled"
+									data-toggle="none" style="color: #216a51 !important;"
 									href="/CGA105G2/src/main/webapp/front-end/store/calltable/callTable.html">
 										🚩帶位 </a></li>
 								<li class="nav-item"><a class="nav-link text-uppercase"
@@ -110,7 +111,8 @@ a {
 									href="/CGA105G2/src/main/webapp/front-end/store/store/updateStoreInfo.html">
 										🗃️管理 </a></li>
 								<li class="nav-item"><a class="nav-link text-uppercase"
-									data-toggle="none" href="/CGA105G2/src/main/webapp/"> 🚪Sing out </a></li>
+									data-toggle="none" href="/CGA105G2/src/main/webapp/">
+										🚪Sing out </a></li>
 							</ul>
 						</div>
 					</nav>
@@ -169,7 +171,7 @@ a {
 									<tr class="text-center">
 										<th class="col-5">電話</th>
 										<th>姓名</th>
-										<th>人數</th>
+										<th class="pl-0">人數</th>
 									</tr>
 								</thead>
 								<tbody class="code_tbody">
@@ -187,15 +189,10 @@ a {
 											data-target="#faq1-item-1" aria-expanded="false">
 											<table class="table table-striped m-0">
 												<tbody class="code_tbody">
-													<!-- 													<tr class="text-center"> -->
-													<!-- 														<td class="col-5">0955555555</td> -->
-													<!-- 														<td>王小姐</td> -->
-													<!-- 														<td>3位</td> -->
-													<!-- 													</tr> -->
 													<tr class="text-center">
-														<td class="col-5">${standbyVo.staPhone}</td>
-														<td>${standbyVo.staName}</td>
-														<td>${standbyVo.staNumber}位</td>
+														<td class="col-5 fs-3">0955555555</td>
+														<td class="fs-3 ">王小姐</td>
+														<td class="fs-3 pl-8">3位</td>
 													</tr>
 
 
@@ -209,14 +206,16 @@ a {
 											</div>
 										</header>
 										<div class="faq-body collapse" id="faq1-item-1">
-											<div class="card-body d-flex flex-column p-5" data-mh="gift-vouchers">
+											<div class="card-body d-flex flex-column p-5"
+												data-mh="gift-vouchers">
 												<select class="custom-select mb-5">
 													<option selected>桌號</option>
 													<option value="1">A1</option>
 													<option value="2">A2</option>
 													<option value="3">A3</option>
 												</select>
-												<div class="d-flex align-items-center justify-content-between">
+												<div
+													class="d-flex align-items-center justify-content-between">
 													<span class="text-dark">1 <span class="text-muted">×</span>
 														Creeme Soup
 													</span>
@@ -225,7 +224,8 @@ a {
 														<div class="price-value">9</div>
 													</div>
 												</div>
-												<div class="d-flex align-items-center justify-content-between mt-3">
+												<div
+													class="d-flex align-items-center justify-content-between mt-3">
 													<span class="text-dark">2 <span class="text-muted">×</span>
 														Multi-greens Salad
 													</span>
@@ -235,7 +235,8 @@ a {
 													</div>
 												</div>
 												<div class="border-lighter border-top my-9"></div>
-												<div class="d-flex align-items-center justify-content-between mt-3">
+												<div
+													class="d-flex align-items-center justify-content-between mt-3">
 													<span class="text-dark"><strong>TOTAL</strong></span>
 													<div class="price fs-6 text-black">
 														<div class="price-currency pr-0">$</div>
@@ -263,7 +264,8 @@ a {
 							style="background-color: rgb(255, 201, 123); color: black;">候位表</p>
 					</div>
 					<div class="p-0 flex-grow-1" id="tablenumber" style="display: none">
-						<div class="btn-group btn-group-toggle flex-grow-1" data-toggle="buttons">
+						<div class="btn-group btn-group-toggle flex-grow-1"
+							data-toggle="buttons">
 							<label class="btn btn-secondary active" id="btmon"> <input
 								type="radio" name="options" id="option1">on
 							</label> <label class="btn btn-secondary" id="btmoff"> <input
@@ -277,9 +279,9 @@ a {
 							<table class="table table-striped m-0">
 								<thead>
 									<tr class="text-center">
-										<th class="col-5">電話</th>
-										<th>姓名</th>
-										<th>人數</th>
+										<th class="col-5 fs-3">電話</th>
+										<th class="fs-3">姓名</th>
+										<th class="fs-3 ml-8">人數</th>
 									</tr>
 								</thead>
 							</table>
@@ -296,7 +298,8 @@ a {
 
 											<c:forEach var="standbyVo" items="${list}">
 												<header class="faq-header" data-toggle="collapse"
-													data-target="#faq2-item-${standbyVo.staId}" aria-expanded="false">
+													data-target="#faq2-item-${standbyVo.staId}"
+													aria-expanded="false">
 													<table class="table table-striped m-0">
 														<tbody class="code_tbody">
 
@@ -312,31 +315,37 @@ a {
 															class="material-icons faq-toggle-open">remove</i>
 													</div>
 												</header>
-												<div class="faq-body collapse" id="faq2-item-${standbyVo.staId}">
-													<div class="radio-buttons-group"
-														style="width: 100%; justify-content: center">
+												<div class="faq-body collapse row mx-auto"
+													id="faq2-item-${standbyVo.staId}"
+													style="width: 100%; justify-content: center">
+													<!-- 													<div class="radio-buttons-group" -->
+													<!-- 														style="width: 100%; justify-content: center"> -->
 
-														<form METHOD="post" ACTION="<%=request.getContextPath()%>/standby">
-															<input type="submit" value="通知" onclick="addStandByAlert()"
-																class="btn btn-outline-info" data-value="call">
-															<input type="hidden" name="staId" value="${standbyVo.staId}">
-															<input type="hidden" name="staStatus"
-																value="${standbyVo.staStatus}"> <input type="hidden"
-																name="action" value="getOneUpdate">
+													<form METHOD="post"
+														ACTION="<%=request.getContextPath()%>/standby">
+														<input type="submit" value="通知"
+															onclick="" class="btn btn-outline-info"
+															data-value="call"> <input type="hidden"
+															name="staId" value="${standbyVo.staId}"> <input
+															type="hidden" name="staStatus"
+															value="${standbyVo.staStatus}"> <input
+															type="hidden" name="action" value="getOneUpdate">
 
-															<!-- 															<button class="btn btn-light selected" data-value="call">通知</button> -->
-														</form>
+														<!-- 															<button class="btn btn-light selected" data-value="call">通知</button> -->
+													</form>
 
-														<form METHOD="post" ACTION="<%=request.getContextPath()%>/standby">
-															<input class="btn btn-outline-info" data-value="come" onclick="addStandByAlert()"
-																type="submit" value="報到d"> <input type="hidden"
-																name="staId" value="${standbyVo.staId}"> <input
-																type="hidden" name="action" value="delete">
+													<form METHOD="post"
+														ACTION="<%=request.getContextPath()%>/standby">
+														<input class="btn btn-outline-info" data-value="come"
+															onclick="deletetStandby()" type="submit" value="報到d">
+														<input type="hidden" name="staId"
+															value="${standbyVo.staId}"> <input type="hidden"
+															name="action" value="delete">
 
-															<!-- 															<button class="btn btn-light" data-value="come">報到</button> -->
-														</form>
-													</div>
+														<!-- 															<button class="btn btn-light" data-value="come">報到</button> -->
+													</form>
 												</div>
+												<!-- 												</div> -->
 											</c:forEach>
 
 
@@ -396,14 +405,16 @@ a {
 										</div>
 									</header>
 									<div class="faq-body collapse" id="faq3-item-1">
-										<div class="card-body d-flex flex-column p-5" data-mh="gift-vouchers">
+										<div class="card-body d-flex flex-column p-5"
+											data-mh="gift-vouchers">
 											<select class="custom-select mb-5">
 												<option selected>桌號</option>
 												<option value="1">A1</option>
 												<option value="2">A2</option>
 												<option value="3">A3</option>
 											</select>
-											<div class="d-flex align-items-center justify-content-between">
+											<div
+												class="d-flex align-items-center justify-content-between">
 												<span class="text-dark">1 <span class="text-muted">×</span>
 													Creeme Soup
 												</span>
@@ -412,7 +423,8 @@ a {
 													<div class="price-value">9</div>
 												</div>
 											</div>
-											<div class="d-flex align-items-center justify-content-between mt-3">
+											<div
+												class="d-flex align-items-center justify-content-between mt-3">
 												<span class="text-dark">2 <span class="text-muted">×</span>
 													Multi-greens Salad
 												</span>
@@ -422,7 +434,8 @@ a {
 												</div>
 											</div>
 											<div class="border-lighter border-top my-9"></div>
-											<div class="d-flex align-items-center justify-content-between mt-3">
+											<div
+												class="d-flex align-items-center justify-content-between mt-3">
 												<span class="text-dark"><strong>TOTAL</strong></span>
 												<div class="price fs-6 text-black">
 													<div class="price-currency pr-0">$</div>
@@ -457,14 +470,16 @@ a {
 										</div>
 									</header>
 									<div class="faq-body collapse" id="faq2-item-2">
-										<div class="card-body d-flex flex-column p-5" data-mh="gift-vouchers">
+										<div class="card-body d-flex flex-column p-5"
+											data-mh="gift-vouchers">
 											<select class="custom-select mb-5">
 												<option selected>桌號</option>
 												<option value="1">A1</option>
 												<option value="2">A2</option>
 												<option value="3">A3</option>
 											</select>
-											<div class="d-flex align-items-center justify-content-between">
+											<div
+												class="d-flex align-items-center justify-content-between">
 												<span class="text-dark">1 <span class="text-muted">×</span>
 													Creeme Soup
 												</span>
@@ -473,7 +488,8 @@ a {
 													<div class="price-value">9</div>
 												</div>
 											</div>
-											<div class="d-flex align-items-center justify-content-between mt-3">
+											<div
+												class="d-flex align-items-center justify-content-between mt-3">
 												<span class="text-dark">2 <span class="text-muted">×</span>
 													Multi-greens Salad
 												</span>
@@ -483,7 +499,8 @@ a {
 												</div>
 											</div>
 											<div class="border-lighter border-top my-9"></div>
-											<div class="d-flex align-items-center justify-content-between mt-3">
+											<div
+												class="d-flex align-items-center justify-content-between mt-3">
 												<span class="text-dark"><strong>TOTAL</strong></span>
 												<div class="price fs-6 text-black">
 													<div class="price-currency pr-0">$</div>
@@ -615,7 +632,8 @@ a {
 		style="width: 100%; position: relative; bottom: 0; top: 30%">
 		<div class="container">
 			<!-- 三張小圖 -->
-			<div class="d-flex align-items-stretch justify-content-md-center py-10">
+			<div
+				class="d-flex align-items-stretch justify-content-md-center py-10">
 				<!-- 地址 -->
 				<div class="card border-0 bg-secondary mb-4 ml-lg-9 w-25">
 					<div class="card-body py-17 px-10 text-center">
@@ -660,23 +678,26 @@ a {
 				<a href="home.html" class="footer-brand">FoodMap</a>
 				<div class="brand-icons-list ml-10 ml-sm-20">
 					<!-- FB圖案 -->
-					<a href="#" class="brand-icon brand-icon-circle brand-icon-facebook"> <i
+					<a href="#"
+						class="brand-icon brand-icon-circle brand-icon-facebook"> <i
 						class="fa fa-facebook-f"></i>
 					</a>
 					<!-- twitter圖案 -->
-					<a href="#" class="brand-icon brand-icon-circle brand-icon-twitter"> <i
-						class="fa fa-twitter "></i>
+					<a href="#" class="brand-icon brand-icon-circle brand-icon-twitter">
+						<i class="fa fa-twitter "></i>
 					</a>
 					<!-- ig圖案-->
-					<a href="#" class="brand-icon brand-icon-circle brand-icon-instagram">
-						<i class="fa fa-pinterest-p"></i>
+					<a href="#"
+						class="brand-icon brand-icon-circle brand-icon-instagram"> <i
+						class="fa fa-pinterest-p"></i>
 					</a>
 				</div>
 			</div>
 			<!-- 頁底文字 -->
 			<small class="d-flex align-items-center justify-content-center"
-				style="margin: 0px -10px 0px -10px;"> TibaMe CGA105_2 MapFood <a
-				href="#" data-toggle="smooth-scroll" data-target="#page-start-anchor"> <i
+				style="margin: 0px -10px 0px -10px;"> TibaMe CGA105_2
+				MapFood <a href="#" data-toggle="smooth-scroll"
+				data-target="#page-start-anchor"> <i
 					class="material-icons text-black">arrow_upward</i>
 			</a>
 			</small>
@@ -693,7 +714,8 @@ a {
 	<!-- jquery 3.4.1 -->
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+	<script
+		src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 	<script>
@@ -771,8 +793,12 @@ a {
     }
 
   </script>
+  
+  
+<!-- 	standby -->
+<script >
 
-
+</script>
 
 
 
