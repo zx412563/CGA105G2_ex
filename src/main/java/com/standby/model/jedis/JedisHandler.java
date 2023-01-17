@@ -1,5 +1,11 @@
 package com.standby.model.jedis;
 
-public class JedisHandler {
+import redis.clients.jedis.JedisPool;
 
+public class JedisHandler {
+	
+	
+	
+	
+	
 }
