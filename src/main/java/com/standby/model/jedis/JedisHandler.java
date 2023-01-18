@@ -9,7 +9,7 @@ public class JedisHandler {
 	public static String addNumber(String key, String field) {
 		// 連線 Redis
 		Jedis jedis = pool.getResource();
-		jedis.auth("123456");
+
 
 		// 取舊資料
 		String oldValue = jedis.hget(key, field);
@@ -26,10 +26,11 @@ public class JedisHandler {
 		return newValue.toString();
 	}
 
+
 	public static String getNumber(String key, String field) {
 		// 連線 Redis
 		Jedis jedis = pool.getResource();
-		jedis.auth("123456");
+
 
 		// 取舊資料
 		String oldValue = jedis.hget(key, field);
@@ -47,7 +48,7 @@ public class JedisHandler {
 	public static void delNumber(String key, String field) {
 		// 連線 Redis
 		Jedis jedis = pool.getResource();
-		jedis.auth("123456");
+
 
 		// 將資料歸零
 		jedis.hset(key, field, "0");

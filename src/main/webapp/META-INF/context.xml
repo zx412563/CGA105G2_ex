@@ -2,7 +2,7 @@
 <!DOCTYPE xml>
 <xml>
 
-
+<!-- 	//123 -->
     <Context>
 <!--context.xml 是對servlet提供資源-->
 <!--可透過JNDI管理Java Servlet使用的連線池-->
